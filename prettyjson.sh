@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function beautify_params() {
+function beautify_json_params() {
 
     for file in "$@";
     do
@@ -12,7 +12,7 @@ function beautify_params() {
     done
 }
 
-function beautify_all() {
+function beautify_json_all() {
     for file in *.json;
     do
         [ -e "$file" ] || continue
@@ -25,8 +25,8 @@ function beautify_all() {
 
 if [ -z "$1" ]; then
     echo "No paramaters. Beautify all json files"
-    beautify_all
+    beautify_json_all
 else
-    beautify_params "$@"
+    beautify_json_params "$@"
 fi
 
